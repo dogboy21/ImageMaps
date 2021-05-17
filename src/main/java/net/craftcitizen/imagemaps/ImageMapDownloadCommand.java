@@ -58,6 +58,7 @@ public class ImageMapDownloadCommand extends ImageMapSubCommand {
             }
             
             URLConnection connection = srcURL.openConnection();
+            connection.setRequestProperty("User-Agent", "ImageMaps");
             
             if (!(connection instanceof HttpURLConnection)) {
                 MessageUtil.sendMessage(getPlugin(), sender, MessageLevel.WARNING, "Download URL is not valid.");
